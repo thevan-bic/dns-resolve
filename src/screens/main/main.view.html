@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DNS Resolve</title>
+  <script src="https://kit.fontawesome.com/1c9144b004.js" crossorigin="anonymous"></script>
+  <style>
+      body {
+          padding: 0;
+          margin: 0;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #menu-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 30px;
+          background: #34475a;
+          -webkit-app-region: drag;
+      }
+
+      #menu-bar > div {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .menubar-btn {
+          -webkit-app-region: no-drag;
+      }
+
+    .container{
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0;
+     text-align: center;
+    }
+    .save-btn {
+     color: green;
+    }
+    .reload-btn {
+      color: coral;
+    }
+    #dns_config {
+      height: 200px;
+      overflow-y: auto;
+    }
+    #scroll {
+      padding: 10px;
+    }
+    .red {
+        color: red;
+    }
+    .green {
+      color: green;
+    }
+
+    .blueviolet {
+        color: blueviolet;
+    }
+    .cornflowerblue {
+        color: cornflowerblue;
+    }
+  </style>
+  <script src="../../../forge.config.js"></script>
+</head>
+<body>
+<div id="menu-bar">
+  <div class="left" role="menu">
+    <button class="menubar-btn" id="menu-btn" style='margin-right: 3px'><i class="fas fa-bars"></i></button>
+    <h5 style='color:white' >DNS Resolve</h5>
+  </div>
+  <div class="right">
+    <button class="menubar-btn" id="minimize-btn"><i class="fas fa-window-minimize"></i></button>
+    <button class="menubar-btn" id="close-btn"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+<div class="container">
+  <h1 style='color:#000;'>DNS Resolve Config</h1>
+  <button style="color:blue; margin-bottom: 10px" id="add_new" type="button">+</button>
+   <div id="scroll">
+     <form id="dns_config" method="get" style="width: 100%">
+     </form>
+   </div>
+  <button class="save-btn" id="save-btn">Save</button>
+</div>
+<div class="container">
+  <h1 style='color:#000;'>Resolv.conf</h1>
+  <button class="red" id="resolv-reset-btn">Reset (8.8.8.8)</button>
+  <button class="green" id="resolv-set-btn">Set (127.0.0.1)</button>
+</div>
+<div class="container">
+  <h1 style='color:#000;'>Dnsmasq Service</h1>
+  <button class="green" id="dnsmasq-start-btn">Start</button>
+  <button class="red" id="dnsmasq-stop-btn">Stop</button>
+  <button class="blueviolet" id="dnsmasq-restart-btn">Restart</button>
+  <button class="cornflowerblue" id="dnsmasq-reload-btn">Reload</button>
+</div>
+
+<script>const exports = {}</script>
+<script type="module" src="./main.renderer.js"></script>
+</body>
+</html>
